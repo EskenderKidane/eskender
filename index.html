@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eskender Kidane</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+
+</head>
+
+<body>
+
+    <div class="container" id="mainPage">
+        <h1>Eskender Kidane</h1>
+        <div class="blue-line"></div>
+        <h2>IT & Junior Developer | Information Technology Student</h2>
+        <p class="description">
+            Passionate about building solutions and solving problems with technology. 
+            Pursuing a BSc in Information Technology (CGPA: 3.9), with hands-on experience in IT support, Networking, and Software Development. 
+            Interested in opportunities to grow as a developer or IT specialist.
+        </p>
+        <div class="buttons">
+            <a style="text-decoration: none;" href="mailto:eskender.araia@hotmail.com">
+                <button class="get-in-touch"><i class="fa-solid fa-envelope"></i> Get In Touch</button>
+            </a>
+            <button class="view-resume" onclick="showResume()">
+                <i class="fa-regular fa-file"></i> View Resume
+            </button>
+        </div>
+
+        <div class="contact">
+
+            <div><i class="fa-solid fa-location-dot"></i> Famagusta, North Cyprus</div>
+            <div class="separator"></div>
+            <div>
+                <a style="text-decoration: none; color: grey;" href="https://github.com/EskenderKidane/">
+                    <i class="fa-brands fa-github"></i> Github</a>
+            </div>
+            <div class="separator"></div>
+            <div>
+                <a style="text-decoration: none; color: grey;" href="https://www.linkedin.com/in/eskender-kidane/">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+
+        <footer style="text-align: center; padding-top: 7rem; font-size: 0.75rem; color: #6b7280;">
+            Made with coffee
+        </footer>
+    </div>
+
+    <div id="resumePage" style="display:none;">
+        <div class="buttons"
+            style="position: sticky; top: 0; background: white; border-bottom: 1px solid #e5e7eb; box-shadow: 0 1px 2px rgba(0,0,0,0.05); z-index: 10; display: flex; justify-content: space-between; align-items: center; padding: 0rem 2rem;">
+
+            <button class="view-resume" onclick="showMain()">
+                ← Back
+            </button>
+            <h1 style="font-size: 1.5rem; font-weight: 600; color: #111827;">
+                Resume - Eskender Kidane
+            </h1>
+            <a style="text-decoration: none;"
+                href="https://github.com/EskenderKidane/Personal-website/raw/main/Eskender_Kidane_Resume.pdf">
+                <button class="get-in-touch"><i class="fa-solid fa-download"></i> Download PDF</button>
+            </a>
+        </div>  
+        <div style="width: 100%; height: calc(100vh - 80px);">
+            <iframe src="https://eskenderkidane.github.io/Personal-website/Eskender_Kidane_Resume.pdf"
+                style="width: 100%; height: 100%; border: 0;"></iframe>
+        </div>
+    </div>
+
+
+
+    <script>
+        function showResume() {
+            document.getElementById('mainPage').style.display = 'none';
+            document.getElementById('resumePage').style.display = 'block';
+        }
+        function showMain() {
+            document.getElementById('resumePage').style.display = 'none';
+            document.getElementById('mainPage').style.display = 'block';
+        }
+    </script>
+
+</body>
+
+</html>
