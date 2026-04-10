@@ -4,7 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Eskender Kidane - IT student and developer building practical web and productivity tools." />
+    <meta name="theme-color" content="#f9fafb" />
     <title>Eskender Kidane</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 
@@ -13,54 +18,114 @@
 <body>
 
     <div class="container" id="mainPage">
-        <h1>Eskender Kidane</h1>
-        <div class="blue-line"></div>
-        <h2>IT & Junior Developer | Information Technology Student</h2>
-        <p class="description">
-            Passionate about building solutions and solving problems with technology. 
-            Pursuing a BSc in Information Technology (CGPA: 3.9), with hands-on experience in IT support, Networking, and Software Development. 
-            Interested in opportunities to grow as a developer or IT specialist.
-        </p>
-        <div class="buttons">
-            <a style="text-decoration: none;" href="mailto:eskender.araia@hotmail.com">
-                <button class="get-in-touch"><i class="fa-solid fa-envelope"></i> Get In Touch</button>
-            </a>
-            <button class="view-resume" onclick="showResume()">
-                <i class="fa-regular fa-file"></i> View Resume
-            </button>
-        </div>
-
-        <div class="contact">
-
-            <div><i class="fa-solid fa-location-dot"></i> Famagusta, North Cyprus</div>
-            <div class="separator"></div>
-            <div>
-                <a style="text-decoration: none; color: grey;" href="https://github.com/EskenderKidane/">
-                    <i class="fa-brands fa-github"></i> Github</a>
+        <nav class="site-nav" aria-label="Primary">
+            <div class="nav-links">
+                <a href="#home" data-section-link="home" class="is-active">Home</a>
+                <a href="#projects" data-section-link="projects">Projects</a>
+                <a href="#contact" data-section-link="contact">Contact</a>
+                <a class="nav-resume" href="https://github.com/EskenderKidane/eskender/raw/main/Eskender%20Kidane%20Resume.pdf" target="_blank" rel="noopener noreferrer">Resume PDF</a>
+                <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+                    <i class="fa-solid fa-moon"></i>
+                    <span>Dark</span>
+                </button>
             </div>
-            <div class="separator"></div>
-            <div>
-                <a style="text-decoration: none; color: grey;" href="https://www.linkedin.com/in/eskender-kidane/">
-                    <i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-            </div>
-        </div>
+        </nav>
 
-        <footer style="text-align: center; padding-top: 7rem; font-size: 0.75rem; color: #6b7280;">
-            Made with coffee
-        </footer>
+        <section id="home" class="hero-section content-section is-active">
+            <h1>Eskender Kidane</h1>
+            <div class="blue-line"></div>
+            <h2>Junior Developer | IT Student</h2>
+            <p class="description">
+                I am an IT student and developer focused on building practical tools that improve productivity. I build
+                with JavaScript and modern web technologies, with an emphasis on clean user experience, reliability,
+                and real workflow impact. From Chrome extensions to automation tools, I enjoy turning simple ideas into
+                useful software while continuously learning and growing through real projects.
+            </p>
+            <div class="buttons">
+                <a class="btn-link" href="mailto:eskender.araia@hotmail.com">
+                    <button class="get-in-touch"><i class="fa-solid fa-envelope"></i> Get In Touch</button>
+                </a>
+                <button id="openResumeBtn" class="view-resume" type="button">
+                    <i class="fa-regular fa-file"></i> View Resume
+                </button>
+            </div>
+        </section>
+
+        <section id="projects" class="section-card content-section">
+            <h3>Projects</h3>
+            <div class="project-list">
+                <article class="project-item">
+                    <div class="project-head">
+                        <h4>SplitPilot Chrome Extension</h4>
+                        <a class="social-link" href="https://github.com/EskenderKidane" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </div>
+                    <p>
+                        A browser productivity tool that enables flexible split-screen workflows so users can manage
+                        research, coding, and documentation side by side.
+                    </p>
+                    <ul class="project-points">
+                        <li>Built with JavaScript, HTML/CSS, and Chrome Tabs/Windows APIs.</li>
+                        <li>Focused on quick resizing and layout control to reduce context-switch friction.</li>
+                        <li>Designed for simple onboarding and fast daily use.</li>
+                    </ul>
+                </article>
+
+                <!-- <article class="project-item">
+                    <div class="project-head">
+                        <h4>Personal Portfolio Website</h4>
+                        <a class="social-link" href="https://github.com/EskenderKidane/eskender" target="_blank" rel="noopener noreferrer">Repository</a>
+                    </div>
+                    <p>
+                        A responsive personal site built for recruiter-friendly scanning, with clear sections,
+                        lightweight performance, and a clean light/dark theme toggle.
+                    </p>
+                    <ul class="project-points">
+                        <li>Implemented semantic HTML, responsive CSS, and client-side theme persistence.</li>
+                        <li>Structured content for fast review of skills, projects, and contact information.</li>
+                    </ul>
+                </article> -->
+            </div>
+        </section>
+
+        <section id="contact" class="section-card contact-card content-section">
+            <h3>Let's Connect</h3>
+            <p>
+                Thank you for visiting. I am open to internships, junior developer roles, and project collaboration.
+                I am happy to share more project details, source code, or a walkthrough on request.
+            </p>
+            <div class="contact-row">
+                <div><i class="fa-solid fa-location-dot"></i> Famagusta, North Cyprus</div>
+                <div class="separator"></div>
+                <div>
+                    <a class="social-link" href="mailto:eskender.araia@hotmail.com">
+                        <i class="fa-solid fa-envelope"></i> Email</a>
+                </div>
+                <div class="separator"></div>
+                <div>
+                    <a class="social-link" href="https://github.com/EskenderKidane/" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-github"></i> Github</a>
+                </div>
+                <div class="separator"></div>
+                <div>
+                    <a class="social-link" href="https://www.linkedin.com/in/eskender-kidane/" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">Open to internships and junior software opportunities</footer>
     </div>
 
     <div id="resumePage" style="display:none;">
-        <div class="buttons"
-            style="position: sticky; top: 0; background: white; border-bottom: 1px solid #e5e7eb; box-shadow: 0 1px 2px rgba(0,0,0,0.05); z-index: 10; display: flex; justify-content: space-between; align-items: center; padding: 0rem 2rem;">
+        <div class="resume-topbar buttons">
 
-            <button class="view-resume" onclick="showMain()">
+            <button id="backToMainBtn" class="view-resume" type="button">
                 ← Back
             </button>
-            <h1 style="font-size: 1.5rem; font-weight: 600; color: #111827;">
+            <h1 class="resume-title">
                 Resume - Eskender Kidane
             </h1>
-            <a style="text-decoration: none;"
+            <a class="btn-link"
                 href="https://github.com/EskenderKidane/eskender/raw/main/Eskender%20Kidane%20Resume.pdf">
                 <button class="get-in-touch"><i class="fa-solid fa-download"></i> Download PDF</button>
             </a>
@@ -74,6 +139,66 @@
 
 
     <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const openResumeBtn = document.getElementById('openResumeBtn');
+        const backToMainBtn = document.getElementById('backToMainBtn');
+        const themeIcon = themeToggle.querySelector('i');
+        const themeText = themeToggle.querySelector('span');
+        const themeMeta = document.querySelector('meta[name="theme-color"]');
+        const sectionLinks = document.querySelectorAll('[data-section-link]');
+        const contentSections = document.querySelectorAll('.content-section');
+
+        function showSection(sectionId, updateHash = true) {
+            contentSections.forEach((section) => {
+                section.classList.toggle('is-active', section.id === sectionId);
+            });
+
+            sectionLinks.forEach((link) => {
+                link.classList.toggle('is-active', link.dataset.sectionLink === sectionId);
+            });
+
+            if (updateHash) {
+                history.replaceState(null, '', `#${sectionId}`);
+            }
+        }
+
+        function applyTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+
+            const isDark = theme === 'dark';
+            themeIcon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+            themeText.textContent = isDark ? 'Light' : 'Dark';
+            if (themeMeta) {
+                themeMeta.setAttribute('content', isDark ? '#0b0b0f' : '#f9fafb');
+            }
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
+
+        themeToggle.addEventListener('click', () => {
+            const nextTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            applyTheme(nextTheme);
+        });
+
+        sectionLinks.forEach((link) => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                showSection(link.dataset.sectionLink);
+            });
+        });
+
+        const initialSection = window.location.hash.replace('#', '');
+        if (initialSection && document.getElementById(initialSection)) {
+            showSection(initialSection, false);
+        } else {
+            showSection('home', false);
+        }
+
+        openResumeBtn.addEventListener('click', showResume);
+        backToMainBtn.addEventListener('click', showMain);
+
         function showResume() {
             document.getElementById('mainPage').style.display = 'none';
             document.getElementById('resumePage').style.display = 'block';
