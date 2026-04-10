@@ -19,6 +19,12 @@
     --theme-toggle-bg: rgba(255, 255, 255, 0.95);
     --theme-toggle-border: #dbe1ea;
     --theme-toggle-shadow: 0 8px 30px rgba(15, 23, 42, 0.12);
+    --nav-active-bg: rgba(37, 99, 235, 0.1);
+    --nav-active-border: rgba(37, 99, 235, 0.22);
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body[data-theme="dark"] {
@@ -42,6 +48,8 @@ body[data-theme="dark"] {
     --theme-toggle-bg: rgba(17, 19, 27, 0.96);
     --theme-toggle-border: rgba(255, 255, 255, 0.14);
     --theme-toggle-shadow: 0 10px 32px rgba(0, 0, 0, 0.35);
+    --nav-active-bg: rgba(59, 130, 246, 0.18);
+    --nav-active-border: rgba(59, 130, 246, 0.4);
 }
 
 body {
@@ -65,19 +73,21 @@ html {
     height: 2rem;
     padding: 0 0.65rem;
     border-radius: 999px;
-    border: 1px solid var(--theme-toggle-border);
-    background: var(--theme-toggle-bg);
+    border: 1px solid color-mix(in srgb, var(--theme-toggle-border) 65%, transparent);
+    background: color-mix(in srgb, var(--theme-toggle-bg) 50%, transparent);
     color: var(--ghost-text);
     box-shadow: none;
     cursor: pointer;
     font-family: inherit;
     font-size: 0.8rem;
     font-weight: 600;
-    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+    opacity: 0.86;
+    transition: opacity 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .theme-toggle:hover {
-    transform: translateY(-1px);
+    opacity: 1;
+    background: color-mix(in srgb, var(--theme-toggle-bg) 70%, transparent);
 }
 
 .container {
@@ -125,8 +135,10 @@ html {
     border: 0;
     cursor: pointer;
     font-family: inherit;
-    padding: 0.2rem 0.35rem;
-    transition: color 0.2s ease;
+    padding: 0.24rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .nav-resume {
@@ -137,10 +149,13 @@ html {
 .nav-links a:hover,
 .nav-resume:hover {
     color: var(--title);
+    background: color-mix(in srgb, var(--ghost-bg) 60%, transparent);
 }
 
 .nav-links a.is-active {
     color: var(--title);
+    background: var(--nav-active-bg);
+    border-color: var(--nav-active-border);
 }
 
 .content-section {
@@ -153,6 +168,49 @@ html {
 
 .hero-section {
     padding: 4rem 0 2.5rem;
+}
+
+.hero-intro {
+    max-width: 48rem;
+    margin: 0 auto 1rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1.2rem;
+    text-align: left;
+}
+
+.hero-text {
+    min-width: 0;
+}
+
+.hero-text h1 {
+    margin-top: 0;
+    margin-bottom: 0.65rem;
+}
+
+.hero-text .blue-line {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1rem;
+}
+
+.hero-text h2 {
+    margin-bottom: 0.4rem;
+}
+
+.hero-photo-wrap {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-photo {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 1rem;
+    border: 1px solid var(--ghost-border);
+    background: var(--ghost-bg);
 }
 
 .resume-container {
@@ -172,7 +230,7 @@ h1 {
 
 @media (min-width: 768px) {
     h1 {
-        font-size: 4.5rem;
+        font-size: 3.5rem;
     }
 }
 
@@ -196,16 +254,19 @@ h2 {
 .description {
     font-size: 1.125rem;
     color: var(--body-copy);
-    max-width: 38rem;
+    max-width: 48rem;
     margin: 0 auto 2.5rem auto;
     line-height: 1.8;
+    text-align: left;
 }
 
 .buttons {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 1.5rem;
     flex-wrap: wrap;
+    max-width: 48rem;
+    margin: 0 auto;
 }
 
 .section-card {
@@ -264,6 +325,17 @@ h2 {
         font-size: 1rem;
     }
 
+    .project-title-link {
+        color: var(--accent);
+        text-decoration: none;   
+    }
+
+    .project-title-link:hover {
+        text-decoration: underline;
+        text-underline-offset: 0.15rem;
+        color: var(--accent-hover);
+    }
+
     .project-item p {
         margin: 0.55rem 0 0;
         color: var(--body-copy);
@@ -271,14 +343,69 @@ h2 {
         line-height: 1.65;
     }
 
+    .project-media {
+        margin-top: 0.6rem;
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        gap: 0.9rem;
+        align-items: start;
+        padding-top: 1%;
+    }
+
+    .project-media p {
+        margin: 0;
+    }
+
+    .project-copy {
+        display: grid;
+        gap: 0.7rem;
+        align-content: start;
+    }
+
+    .project-thumb {
+        width: 100%;
+        margin-top: 0;
+        border-radius: 0.7rem;
+        border: 1px solid var(--ghost-border);
+        display: block;
+        object-fit: cover;
+        /* aspect-ratio: 4 / 3; */
+    }
+
     .project-points {
-        margin: 0.7rem 0 0;
+        margin: 0;
         padding-left: 1rem;
         color: var(--body-copy);
         display: grid;
         gap: 0.35rem;
         font-size: 0.9rem;
         line-height: 1.55;
+    }
+
+    .project-actions {
+        margin-top: 0.9rem;
+        justify-self: right;
+    }
+
+    .project-store-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 2.2rem;
+        padding: 0 0.9rem;
+        border-radius: 999px;
+        text-decoration: none;
+        font-size: 0.84rem;
+        font-weight: 600;
+        color: #ffffff;
+        background: var(--accent);
+        border: 1px solid transparent;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .project-store-btn:hover {
+        background: var(--accent-hover);
+        transform: translateY(-1px);
     }
 
 .highlight-item {
@@ -305,10 +432,61 @@ h2 {
     margin-bottom: 0;
 }
 
+.contact-form {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.55rem;
+}
+
+.contact-form label {
+    color: var(--subtitle);
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    border: 1px solid var(--ghost-border);
+    background: var(--ghost-bg);
+    color: var(--text);
+    border-radius: 0.65rem;
+    padding: 0.65rem 0.75rem;
+    font-family: inherit;
+    font-size: 0.92rem;
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent);
+}
+
+.form-submit {
+    margin-top: 0.35rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    height: 2.35rem;
+    padding: 0 1rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--accent);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.form-submit:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
 .contact-row {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.7rem;
     justify-content: center;
     align-items: center;
     color: var(--muted);
@@ -439,33 +617,52 @@ h2,
 
     .site-nav {
         border-radius: 0.9rem;
-        padding: 0.55rem 0.65rem;
+        padding: 0.5rem 0.58rem;
         justify-content: center;
         top: 0.55rem;
         margin-bottom: 2rem;
+        width: calc(100% - 1rem);
     }
 
     .nav-links {
         justify-content: center;
         gap: 0.4rem;
-        row-gap: 0.3rem;
+        row-gap: 0.38rem;
+        width: 100%;
     }
 
     .nav-links a,
     .nav-resume {
-        font-size: 0.78rem;
-        padding: 0.18rem 0.28rem;
+        font-size: 0.82rem;
+        padding: 0.22rem 0.34rem;
+        white-space: nowrap;
     }
 
     .theme-toggle {
-        height: 1.85rem;
-        padding: 0 0.55rem;
-        font-size: 0.75rem;
+        height: 1.9rem;
+        width: 1.9rem;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .theme-toggle span {
+        display: none;
     }
 
     .hero-section {
         padding-top: 2.2rem;
         padding-bottom: 1.2rem;
+    }
+
+    .hero-intro {
+        gap: 0.75rem;
+        margin-bottom: 0.7rem;
+    }
+
+    .hero-photo {
+        width: 88px;
+        height: 88px;
+        border-radius: 0.8rem;
     }
 
     h1 {
@@ -524,8 +721,21 @@ h2,
         font-size: 0.9rem;
     }
 
+    .project-media {
+        grid-template-columns: 1fr;
+    }
+
     .project-points {
         font-size: 0.86rem;
+    }
+
+    .contact-row {
+        gap: 0.55rem;
+        font-size: 0.82rem;
+    }
+
+    .separator {
+        display: none;
     }
 
     .resume-topbar {
@@ -547,17 +757,6 @@ h2,
 }
 
 @media (max-width: 520px) {
-    .theme-toggle span {
-        display: none;
-    }
-
-    .theme-toggle {
-        width: 1.95rem;
-        height: 1.85rem;
-        padding: 0;
-        justify-content: center;
-    }
-
     .site-nav {
         border-radius: 0.75rem;
     }

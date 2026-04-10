@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Eskender Kidane - IT student and developer building practical web and productivity tools." />
+    <meta name="description"
+        content="Eskender Kidane - IT student and developer building practical web and productivity tools." />
     <meta name="theme-color" content="#f9fafb" />
     <title>Eskender Kidane</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -23,8 +25,11 @@
                 <a href="#home" data-section-link="home" class="is-active">Home</a>
                 <a href="#projects" data-section-link="projects">Projects</a>
                 <a href="#contact" data-section-link="contact">Contact</a>
-                <a class="nav-resume" href="https://github.com/EskenderKidane/eskender/raw/main/Eskender%20Kidane%20Resume.pdf" target="_blank" rel="noopener noreferrer">Resume PDF</a>
-                <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+                <a class="nav-resume"
+                    href="https://github.com/EskenderKidane/eskender/raw/main/Eskender%20Kidane%20Resume.pdf"
+                    target="_blank" rel="noopener noreferrer">Resume</a>
+                <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme"
+                    title="Toggle theme">
                     <i class="fa-solid fa-moon"></i>
                     <span>Dark</span>
                 </button>
@@ -32,17 +37,26 @@
         </nav>
 
         <section id="home" class="hero-section content-section is-active">
-            <h1>Eskender Kidane</h1>
-            <div class="blue-line"></div>
-            <h2>Junior Developer | IT Student</h2>
+            <div class="hero-intro">
+                <div class="hero-text">
+                    <h1>Hey, I'm Eskender</h1>
+                    <div class="blue-line"></div>
+                    <!-- <h2>Junior Developer | IT Student</h2> -->
+                </div>
+                <div class="hero-photo-wrap">
+                    <img class="hero-photo" src="https://avatars.githubusercontent.com/EskenderKidane?v=4"
+                        alt="Portrait of Eskender Kidane" loading="lazy" />
+                </div>
+            </div>
             <p class="description">
-                I am an IT student and developer focused on building practical tools that improve productivity. I build
+                I am a BSc IT student and developer focused on building practical tools that improve productivity. I
+                build
                 with JavaScript and modern web technologies, with an emphasis on clean user experience, reliability,
-                and real workflow impact. From Chrome extensions to automation tools, I enjoy turning simple ideas into
+                and real workflow impact. I enjoy turning simple ideas into
                 useful software while continuously learning and growing through real projects.
             </p>
             <div class="buttons">
-                <a class="btn-link" href="mailto:eskender.araia@hotmail.com">
+                <a class="btn-link" href="#contact" data-section-link="contact">
                     <button class="get-in-touch"><i class="fa-solid fa-envelope"></i> Get In Touch</button>
                 </a>
                 <button id="openResumeBtn" class="view-resume" type="button">
@@ -56,45 +70,57 @@
             <div class="project-list">
                 <article class="project-item">
                     <div class="project-head">
-                        <h4>SplitPilot Chrome Extension</h4>
-                        <a class="social-link" href="https://github.com/EskenderKidane" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <h4>
+                            <a class="project-title-link"
+                                href="https://chromewebstore.google.com/detail/splitpilot-split-screen-f/cniihhllomakgibchmijicnojeaganpj"
+                                target="_blank" rel="noopener noreferrer">SplitPilot Chrome Extension</a>
+                        </h4>
                     </div>
-                    <p>
-                        A browser productivity tool that enables flexible split-screen workflows so users can manage
-                        research, coding, and documentation side by side.
-                    </p>
-                    <ul class="project-points">
-                        <li>Built with JavaScript, HTML/CSS, and Chrome Tabs/Windows APIs.</li>
-                        <li>Focused on quick resizing and layout control to reduce context-switch friction.</li>
-                        <li>Designed for simple onboarding and fast daily use.</li>
-                    </ul>
+                    <div class="project-media">
+                        <img class="project-thumb"
+                            src="https://lh3.googleusercontent.com/wFyA9ZhlN5jPiW7h7wolVAraX0PcVLbZVMsIHigYTQIQeiaXfIETGaSE8AyLlPTAvJtMJlbCOc6FMLWiA8a-7TO9=s1280-w1280-h800"
+                            alt="SplitPilot Chrome extension thumbnail" loading="lazy" />
+                        <div class="project-copy">
+                            <p>
+                                A browser productivity tool that enables flexible split-screen workflows so users can
+                                manage research, coding, and documentation side by side.
+                            </p>
+                            <ul class="project-points">
+                                <li>Built with JavaScript, HTML/CSS, and Chrome APIs.</li>
+                                <li>It has gained significant traction, surpassing 1,000 installs.</li>
+                            </ul>
+                        </div>
+                        <div></div>
+                        <div class="project-actions">
+                            <a class="project-store-btn"
+                                href="https://chromewebstore.google.com/detail/splitpilot-split-screen-f/cniihhllomakgibchmijicnojeaganpj"
+                                target="_blank" rel="noopener noreferrer">View on Chrome Web Store</a>
+                        </div>
+                    </div>
                 </article>
-
-                <!-- <article class="project-item">
-                    <div class="project-head">
-                        <h4>Personal Portfolio Website</h4>
-                        <a class="social-link" href="https://github.com/EskenderKidane/eskender" target="_blank" rel="noopener noreferrer">Repository</a>
-                    </div>
-                    <p>
-                        A responsive personal site built for recruiter-friendly scanning, with clear sections,
-                        lightweight performance, and a clean light/dark theme toggle.
-                    </p>
-                    <ul class="project-points">
-                        <li>Implemented semantic HTML, responsive CSS, and client-side theme persistence.</li>
-                        <li>Structured content for fast review of skills, projects, and contact information.</li>
-                    </ul>
-                </article> -->
+                <h3 style="justify-self: center; padding-top: 5%; color: dimgrey;">More Coming Soon...</h3>
             </div>
         </section>
 
         <section id="contact" class="section-card contact-card content-section">
-            <h3>Let's Connect</h3>
+            <h3>Contact</h3>
             <p>
-                Thank you for visiting. I am open to internships, junior developer roles, and project collaboration.
-                I am happy to share more project details, source code, or a walkthrough on request.
+                Have an opportunity or project in mind? Send me a message and I will get back to you.
             </p>
+            <form id="contactForm" class="contact-form">
+                <label for="topic">Topic</label>
+                <input id="topic" name="topic" rows="0" required></input>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button class="form-submit" type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <footer class="site-footer">
             <div class="contact-row">
-                <div><i class="fa-solid fa-location-dot"></i> Famagusta, North Cyprus</div>
+                <div><i class="fa-solid fa-location-dot"></i> Cyprus</div>
                 <div class="separator"></div>
                 <div>
                     <a class="social-link" href="mailto:eskender.araia@hotmail.com">
@@ -102,18 +128,24 @@
                 </div>
                 <div class="separator"></div>
                 <div>
-                    <a class="social-link" href="https://github.com/EskenderKidane/" target="_blank" rel="noopener noreferrer">
+                    <a class="social-link" href="https://www.linkedin.com/in/eskender-kidane/" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                </div>
+                <div class="separator"></div>
+                <div>
+                    <a class="social-link" href="https://github.com/EskenderKidane/" target="_blank"
+                        rel="noopener noreferrer">
                         <i class="fa-brands fa-github"></i> Github</a>
                 </div>
                 <div class="separator"></div>
                 <div>
-                    <a class="social-link" href="https://www.linkedin.com/in/eskender-kidane/" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    <a class="social-link" href="https://www.x.com/eskender_kidane" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fa-brands fa-square-x-twitter"></i> X</a>
                 </div>
             </div>
-        </section>
-
-        <footer class="site-footer">Open to internships and junior software opportunities</footer>
+        </footer>
     </div>
 
     <div id="resumePage" style="display:none;">
@@ -129,7 +161,7 @@
                 href="https://github.com/EskenderKidane/eskender/raw/main/Eskender%20Kidane%20Resume.pdf">
                 <button class="get-in-touch"><i class="fa-solid fa-download"></i> Download PDF</button>
             </a>
-        </div>  
+        </div>
         <div style="width: 100%; height: calc(100vh - 80px);">
             <iframe src="https://eskenderkidane.github.io/eskender/Eskender%20Kidane%20Resume.pdf"
                 style="width: 100%; height: 100%; border: 0;"></iframe>
@@ -142,6 +174,9 @@
         const themeToggle = document.getElementById('themeToggle');
         const openResumeBtn = document.getElementById('openResumeBtn');
         const backToMainBtn = document.getElementById('backToMainBtn');
+        const contactForm = document.getElementById('contactForm');
+        const messageTopic = document.getElementById('topic');
+        const messageInput = document.getElementById('message');
         const themeIcon = themeToggle.querySelector('i');
         const themeText = themeToggle.querySelector('span');
         const themeMeta = document.querySelector('meta[name="theme-color"]');
@@ -198,6 +233,15 @@
 
         openResumeBtn.addEventListener('click', showResume);
         backToMainBtn.addEventListener('click', showMain);
+
+        contactForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const subject = messageTopic.value.trim();
+            const bodyText = messageInput.value.trim() + '\n';
+
+            window.location.href = `mailto:eskender.araia@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
+        });
 
         function showResume() {
             document.getElementById('mainPage').style.display = 'none';
